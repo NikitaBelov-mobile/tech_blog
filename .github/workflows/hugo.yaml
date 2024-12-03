@@ -50,6 +50,19 @@ jobs:
         uses: actions/configure-pages@v5
       - name: Install Node.js dependencies
         run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
+
+      # Добавляем проверку структуры проекта
+      - name: Check project structure
+        run: |
+          echo "Checking project structure..."
+          ls -la
+          echo "Checking static directory..."
+          ls -la static || true
+          echo "Checking static/css directory..."
+          ls -la static/css || true
+          echo "Checking static/js directory..."
+          ls -la static/js || true
+
       - name: Build with Hugo
         env:
           HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
