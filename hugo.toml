@@ -3,13 +3,50 @@ languageCode = 'en-us'
 title = 'My New Hugo Site'
 theme = 'profile'
 
-# Добавьте эти настройки
-[menu]
-  [[menu.main]]
-    identifier = "posts"
-    name = "Posts"
-    url = "/posts/"
-    weight = 10
-
+# Основные параметры темы
 [params]
-  mainSections = ["posts"]
+title = "My New Hugo Site"
+description = "Welcome to my blog"
+favicon = "/images/favicon.ico"
+
+# Информация профиля
+[params.hero]
+enable = true
+intro = "Hi, I'm"
+title = "Your Name"
+subtitle = "Welcome to my blog"
+content = "A brief description about yourself"
+image = "/images/profile.jpg"
+
+# Секция "About"
+[params.about]
+enable = true
+title = "About Me"
+content = "Write something about yourself here"
+
+# Секция блога
+[params.blog]
+enable = true
+title = "Blog Posts"
+
+# Навигация
+[[menu.main]]
+name = "Home"
+url = "/"
+weight = 1
+[[menu.main]]
+name = "About"
+url = "/about"
+weight = 2
+[[menu.main]]
+name = "Posts"
+url = "/posts"
+weight = 3
+
+# Социальные сети (добавьте свои)
+[[params.social]]
+icon = "fab fa-github"
+url = "https://github.com/yourusername"
+[[params.social]]
+icon = "fab fa-twitter"
+url = "https://twitter.com/yourusername"
